@@ -17,12 +17,12 @@ public class PinForceIncer : MonoBehaviour
 
     private void OnEnable()
     {
-        rigidbodyInputs.RigidBodyInputs.Enable();
+        rigidbodyInputs.SpawnActions.Enable();
     }
 
     private void OnDisable()
     {
-        rigidbodyInputs.RigidBodyInputs.Disable();
+        rigidbodyInputs.SpawnActions.Disable();
     }
 
     private void Awake()

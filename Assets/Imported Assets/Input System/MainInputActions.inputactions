@@ -183,6 +183,90 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "SpawnActions",
+            "id": "30442910-65fd-4dff-8703-11f4f67014e3",
+            "actions": [
+                {
+                    "name": "FirstSpawn",
+                    "type": "Button",
+                    "id": "a0aca696-6e20-443c-981b-7b7e8bf8fdbe",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "SecondSpawn",
+                    "type": "Button",
+                    "id": "8e5cdec8-d38a-43cc-8d87-4f5992953601",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "ThirdSpawn",
+                    "type": "Button",
+                    "id": "2d5a97a4-4281-4da3-bc50-49cbbedc5cdb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "FourthSpawn",
+                    "type": "Button",
+                    "id": "9107e1d5-38e6-423a-a38d-1754b0f77eab",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ddf82971-a41e-4ce3-a6d4-c0647fc5563e",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FirstSpawn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "848caedc-a9eb-4a32-816c-84e7768635ec",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SecondSpawn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "caf7ee40-76cb-4479-af71-00f9b40d88ed",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ThirdSpawn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d081ee99-4f0f-46aa-b1d4-4e45809e7810",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FourthSpawn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

@@ -196,6 +196,90 @@ public class @MainInputActions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""SpawnActions"",
+            ""id"": ""30442910-65fd-4dff-8703-11f4f67014e3"",
+            ""actions"": [
+                {
+                    ""name"": ""FirstSpawn"",
+                    ""type"": ""Button"",
+                    ""id"": ""a0aca696-6e20-443c-981b-7b7e8bf8fdbe"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SecondSpawn"",
+                    ""type"": ""Button"",
+                    ""id"": ""8e5cdec8-d38a-43cc-8d87-4f5992953601"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ThirdSpawn"",
+                    ""type"": ""Button"",
+                    ""id"": ""2d5a97a4-4281-4da3-bc50-49cbbedc5cdb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""FourthSpawn"",
+                    ""type"": ""Button"",
+                    ""id"": ""9107e1d5-38e6-423a-a38d-1754b0f77eab"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""ddf82971-a41e-4ce3-a6d4-c0647fc5563e"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FirstSpawn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""848caedc-a9eb-4a32-816c-84e7768635ec"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SecondSpawn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""caf7ee40-76cb-4479-af71-00f9b40d88ed"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ThirdSpawn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d081ee99-4f0f-46aa-b1d4-4e45809e7810"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FourthSpawn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -207,6 +291,12 @@ public class @MainInputActions : IInputActionCollection, IDisposable
         m_RigidBodyInputs = asset.FindActionMap("RigidBodyInputs", throwIfNotFound: true);
         m_RigidBodyInputs_Up = m_RigidBodyInputs.FindAction("Up", throwIfNotFound: true);
         m_RigidBodyInputs_Scatter = m_RigidBodyInputs.FindAction("Scatter", throwIfNotFound: true);
+        // SpawnActions
+        m_SpawnActions = asset.FindActionMap("SpawnActions", throwIfNotFound: true);
+        m_SpawnActions_FirstSpawn = m_SpawnActions.FindAction("FirstSpawn", throwIfNotFound: true);
+        m_SpawnActions_SecondSpawn = m_SpawnActions.FindAction("SecondSpawn", throwIfNotFound: true);
+        m_SpawnActions_ThirdSpawn = m_SpawnActions.FindAction("ThirdSpawn", throwIfNotFound: true);
+        m_SpawnActions_FourthSpawn = m_SpawnActions.FindAction("FourthSpawn", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -326,6 +416,63 @@ public class @MainInputActions : IInputActionCollection, IDisposable
         }
     }
     public RigidBodyInputsActions @RigidBodyInputs => new RigidBodyInputsActions(this);
+
+    // SpawnActions
+    private readonly InputActionMap m_SpawnActions;
+    private ISpawnActionsActions m_SpawnActionsActionsCallbackInterface;
+    private readonly InputAction m_SpawnActions_FirstSpawn;
+    private readonly InputAction m_SpawnActions_SecondSpawn;
+    private readonly InputAction m_SpawnActions_ThirdSpawn;
+    private readonly InputAction m_SpawnActions_FourthSpawn;
+    public struct SpawnActionsActions
+    {
+        private @MainInputActions m_Wrapper;
+        public SpawnActionsActions(@MainInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @FirstSpawn => m_Wrapper.m_SpawnActions_FirstSpawn;
+        public InputAction @SecondSpawn => m_Wrapper.m_SpawnActions_SecondSpawn;
+        public InputAction @ThirdSpawn => m_Wrapper.m_SpawnActions_ThirdSpawn;
+        public InputAction @FourthSpawn => m_Wrapper.m_SpawnActions_FourthSpawn;
+        public InputActionMap Get() { return m_Wrapper.m_SpawnActions; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SpawnActionsActions set) { return set.Get(); }
+        public void SetCallbacks(ISpawnActionsActions instance)
+        {
+            if (m_Wrapper.m_SpawnActionsActionsCallbackInterface != null)
+            {
+                @FirstSpawn.started -= m_Wrapper.m_SpawnActionsActionsCallbackInterface.OnFirstSpawn;
+                @FirstSpawn.performed -= m_Wrapper.m_SpawnActionsActionsCallbackInterface.OnFirstSpawn;
+                @FirstSpawn.canceled -= m_Wrapper.m_SpawnActionsActionsCallbackInterface.OnFirstSpawn;
+                @SecondSpawn.started -= m_Wrapper.m_SpawnActionsActionsCallbackInterface.OnSecondSpawn;
+                @SecondSpawn.performed -= m_Wrapper.m_SpawnActionsActionsCallbackInterface.OnSecondSpawn;
+                @SecondSpawn.canceled -= m_Wrapper.m_SpawnActionsActionsCallbackInterface.OnSecondSpawn;
+                @ThirdSpawn.started -= m_Wrapper.m_SpawnActionsActionsCallbackInterface.OnThirdSpawn;
+                @ThirdSpawn.performed -= m_Wrapper.m_SpawnActionsActionsCallbackInterface.OnThirdSpawn;
+                @ThirdSpawn.canceled -= m_Wrapper.m_SpawnActionsActionsCallbackInterface.OnThirdSpawn;
+                @FourthSpawn.started -= m_Wrapper.m_SpawnActionsActionsCallbackInterface.OnFourthSpawn;
+                @FourthSpawn.performed -= m_Wrapper.m_SpawnActionsActionsCallbackInterface.OnFourthSpawn;
+                @FourthSpawn.canceled -= m_Wrapper.m_SpawnActionsActionsCallbackInterface.OnFourthSpawn;
+            }
+            m_Wrapper.m_SpawnActionsActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @FirstSpawn.started += instance.OnFirstSpawn;
+                @FirstSpawn.performed += instance.OnFirstSpawn;
+                @FirstSpawn.canceled += instance.OnFirstSpawn;
+                @SecondSpawn.started += instance.OnSecondSpawn;
+                @SecondSpawn.performed += instance.OnSecondSpawn;
+                @SecondSpawn.canceled += instance.OnSecondSpawn;
+                @ThirdSpawn.started += instance.OnThirdSpawn;
+                @ThirdSpawn.performed += instance.OnThirdSpawn;
+                @ThirdSpawn.canceled += instance.OnThirdSpawn;
+                @FourthSpawn.started += instance.OnFourthSpawn;
+                @FourthSpawn.performed += instance.OnFourthSpawn;
+                @FourthSpawn.canceled += instance.OnFourthSpawn;
+            }
+        }
+    }
+    public SpawnActionsActions @SpawnActions => new SpawnActionsActions(this);
     public interface IPlayerInputsActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -334,5 +481,12 @@ public class @MainInputActions : IInputActionCollection, IDisposable
     {
         void OnUp(InputAction.CallbackContext context);
         void OnScatter(InputAction.CallbackContext context);
+    }
+    public interface ISpawnActionsActions
+    {
+        void OnFirstSpawn(InputAction.CallbackContext context);
+        void OnSecondSpawn(InputAction.CallbackContext context);
+        void OnThirdSpawn(InputAction.CallbackContext context);
+        void OnFourthSpawn(InputAction.CallbackContext context);
     }
 }
