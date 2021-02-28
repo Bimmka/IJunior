@@ -1,14 +1,38 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class ObjectSpawner : MonoBehaviour, IObjectSpawner
+public class ObjectSpawner : MonoBehaviour
 {
-    public void SpawnObject(GameObject objectForSpawn)
+    [Tooltip("Объекты, которые буду спавнить спавнеры")] 
+    [SerializeField] private GameObject[] _objectsForSpawn;
+
+    [Tooltip("Интервал между спавнами")] 
+    [SerializeField] private float _spawnInterval;
+    
+    [Tooltip("Точки спавна")]
+    [SerializeField] private Transform[] _objectSpawners;
+
+    private WaitForSeconds _spawnTime;
+    
+   
+
+    private void Awake()
     {
-        Instantiate(objectForSpawn, transform.position, objectForSpawn.transform.rotation);
+        _spawnTime = new WaitForSeconds(_spawnInterval);
     }
-}
 
-public interface IObjectSpawner
-{
-    void SpawnObject(GameObject objectForSpawn);
+    private void Start()
+    {
+        StartCoroutine(SpawnObject());
+    }
+
+    private IEnumerator SpawnObject()
+    {
+        while (true)
+        {
+            yield return _spawnTime;
+            Instantiate(_objectsForSpawn[Random.Range(0,_objectsForSpawn.Length)], _objectSpawners[Random.Range(0,_objectSpawners.Length)]);
+        }
+    }
 }
