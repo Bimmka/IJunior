@@ -130,7 +130,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 365316636}
-  - component: {fileID: 365316637}
   m_Layer: 0
   m_Name: Pin Spawner
   m_TagString: Untagged
@@ -156,20 +155,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &365316637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 365316635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6be3ad713407dc74ca09979e184561a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _forceUp: 0
-  _scatterForceCoeff: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +349,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 822453709}
-  - component: {fileID: 822453710}
   m_Layer: 0
   m_Name: Pin Position (1)
   m_TagString: Untagged
@@ -380,42 +364,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822453708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0.4, z: 0.7}
+  m_LocalPosition: {x: 14.1, y: 0.4, z: 6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 365316636}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &822453710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 822453708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccf490eac7e779c47a1287182e0aaea2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bowlingPin: {fileID: 1706021000451793675, guid: 7e8efae071c78a442b0b91ab1322690d,
-    type: 3}
-  _inputActions:
-    m_Name: Input Actions
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 23743bcf-bfba-48b4-b018-4a1947537d44
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 767596a7-bc93-497a-b4db-a555ad91ad34
-      m_Path: <Keyboard>/w
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Input Actions
-      m_Flags: 0
 --- !u!1 &823941020
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,7 +409,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 825193435}
-  - component: {fileID: 825193436}
   m_Layer: 0
   m_Name: Pin Position (2)
   m_TagString: Untagged
@@ -471,42 +424,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 825193434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.4, z: 0.7}
+  m_LocalPosition: {x: 0.5, y: 8.65, z: -22.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 365316636}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &825193436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 825193434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccf490eac7e779c47a1287182e0aaea2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bowlingPin: {fileID: 1706021000451793675, guid: 7e8efae071c78a442b0b91ab1322690d,
-    type: 3}
-  _inputActions:
-    m_Name: Input Actions
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: e963a2bf-74ae-4204-a2d1-784c5a31fa8f
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 6bf5f774-232c-4de7-bb2b-3e17fe8fedc2
-      m_Path: <Keyboard>/e
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Input Actions
-      m_Flags: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,7 +522,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1367930104}
-  - component: {fileID: 1367930105}
   m_Layer: 0
   m_Name: Pin Position
   m_TagString: Untagged
@@ -615,42 +537,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367930103}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5, y: 0.4, z: 0.7}
+  m_LocalPosition: {x: -14.56, y: 13.51, z: 0.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 365316636}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1367930105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1367930103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccf490eac7e779c47a1287182e0aaea2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bowlingPin: {fileID: 1706021000451793675, guid: 7e8efae071c78a442b0b91ab1322690d,
-    type: 3}
-  _inputActions:
-    m_Name: Input Actions
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: a144891f-7ee5-4c6e-95e8-a17bc8d5c92d
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 2f2f5677-976c-4bef-b020-21f29f1eb0f0
-      m_Path: <Keyboard>/q
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Input Actions
-      m_Flags: 0
 --- !u!1 &1803454148
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,7 +552,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1803454149}
-  - component: {fileID: 1803454150}
   m_Layer: 0
   m_Name: Pin Position (3)
   m_TagString: Untagged
@@ -676,42 +567,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803454148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0.4, z: 0.7}
+  m_LocalPosition: {x: -12.64, y: 0.4, z: -12.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 365316636}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1803454150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803454148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccf490eac7e779c47a1287182e0aaea2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bowlingPin: {fileID: 1706021000451793675, guid: 7e8efae071c78a442b0b91ab1322690d,
-    type: 3}
-  _inputActions:
-    m_Name: Input Actions
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: e963a2bf-74ae-4204-a2d1-784c5a31fa8f
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: f6f79c3b-8144-4493-b616-8ec3a2df0fc2
-      m_Path: <Keyboard>/r
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Input Actions
-      m_Flags: 0
 --- !u!1 &2016903981
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,3 +658,92 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2878093237098740234
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2878093236398808580, guid: dd6852aa69c44da4da48d519c5bcf953,
+        type: 3}
+      propertyPath: _wayPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1367930104}
+    - target: {fileID: 2878093236398808580, guid: dd6852aa69c44da4da48d519c5bcf953,
+        type: 3}
+      propertyPath: _wayPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 822453709}
+    - target: {fileID: 2878093236398808580, guid: dd6852aa69c44da4da48d519c5bcf953,
+        type: 3}
+      propertyPath: _wayPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 825193435}
+    - target: {fileID: 2878093236398808580, guid: dd6852aa69c44da4da48d519c5bcf953,
+        type: 3}
+      propertyPath: _wayPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 1803454149}
+    - target: {fileID: 3484672869572050189, guid: dd6852aa69c44da4da48d519c5bcf953,
+        type: 3}
+      propertyPath: m_Name
+      value: Flying Pin
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258112970832750519, guid: dd6852aa69c44da4da48d519c5bcf953,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258112970832750519, guid: dd6852aa69c44da4da48d519c5bcf953,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258112970832750519, guid: dd6852aa69c44da4da48d519c5bcf953,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258112970832750519, guid: dd6852aa69c44da4da48d519c5bcf953,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258112970832750519, guid: dd6852aa69c44da4da48d519c5bcf953,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258112970832750519, guid: dd6852aa69c44da4da48d519c5bcf953,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258112970832750519, guid: dd6852aa69c44da4da48d519c5bcf953,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258112970832750519, guid: dd6852aa69c44da4da48d519c5bcf953,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258112970832750519, guid: dd6852aa69c44da4da48d519c5bcf953,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258112970832750519, guid: dd6852aa69c44da4da48d519c5bcf953,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258112970832750519, guid: dd6852aa69c44da4da48d519c5bcf953,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dd6852aa69c44da4da48d519c5bcf953, type: 3}
