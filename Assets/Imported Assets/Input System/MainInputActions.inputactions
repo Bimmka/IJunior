@@ -137,6 +137,52 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "RigidBodyInputs",
+            "id": "c5a50c74-70bf-47a3-925e-d60accfbba80",
+            "actions": [
+                {
+                    "name": "Up",
+                    "type": "PassThrough",
+                    "id": "cc7a0bea-ee5b-4c79-9dde-7392993fa794",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Scatter",
+                    "type": "Button",
+                    "id": "d1de495b-897a-42b7-9a83-3e1414ca9413",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "429cbaa8-fa73-452b-ac04-0a2fab18501a",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f17d26c0-ccbf-4411-855b-96dcb9f854ea",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Scatter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

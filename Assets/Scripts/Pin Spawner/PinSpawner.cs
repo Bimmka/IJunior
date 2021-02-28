@@ -8,8 +8,8 @@ public class PinSpawner : MonoBehaviour
     [Tooltip("Prefab кегли")] 
     [SerializeField] private GameObject _bowlingPin;
 
-    private void Awake()
+    private void OnEnable()
     {
-        Instantiate(_bowlingPin, transform.position, _bowlingPin.transform.rotation);
+        Instantiate(_bowlingPin, transform.position, _bowlingPin.transform.rotation, transform);
     }
 }

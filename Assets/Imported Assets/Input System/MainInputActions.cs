@@ -150,6 +150,52 @@ public class @MainInputActions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""RigidBodyInputs"",
+            ""id"": ""c5a50c74-70bf-47a3-925e-d60accfbba80"",
+            ""actions"": [
+                {
+                    ""name"": ""Up"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""cc7a0bea-ee5b-4c79-9dde-7392993fa794"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Scatter"",
+                    ""type"": ""Button"",
+                    ""id"": ""d1de495b-897a-42b7-9a83-3e1414ca9413"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""429cbaa8-fa73-452b-ac04-0a2fab18501a"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f17d26c0-ccbf-4411-855b-96dcb9f854ea"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Scatter"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -157,6 +203,10 @@ public class @MainInputActions : IInputActionCollection, IDisposable
         // PlayerInputs
         m_PlayerInputs = asset.FindActionMap("PlayerInputs", throwIfNotFound: true);
         m_PlayerInputs_Move = m_PlayerInputs.FindAction("Move", throwIfNotFound: true);
+        // RigidBodyInputs
+        m_RigidBodyInputs = asset.FindActionMap("RigidBodyInputs", throwIfNotFound: true);
+        m_RigidBodyInputs_Up = m_RigidBodyInputs.FindAction("Up", throwIfNotFound: true);
+        m_RigidBodyInputs_Scatter = m_RigidBodyInputs.FindAction("Scatter", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -235,8 +285,54 @@ public class @MainInputActions : IInputActionCollection, IDisposable
         }
     }
     public PlayerInputsActions @PlayerInputs => new PlayerInputsActions(this);
+
+    // RigidBodyInputs
+    private readonly InputActionMap m_RigidBodyInputs;
+    private IRigidBodyInputsActions m_RigidBodyInputsActionsCallbackInterface;
+    private readonly InputAction m_RigidBodyInputs_Up;
+    private readonly InputAction m_RigidBodyInputs_Scatter;
+    public struct RigidBodyInputsActions
+    {
+        private @MainInputActions m_Wrapper;
+        public RigidBodyInputsActions(@MainInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Up => m_Wrapper.m_RigidBodyInputs_Up;
+        public InputAction @Scatter => m_Wrapper.m_RigidBodyInputs_Scatter;
+        public InputActionMap Get() { return m_Wrapper.m_RigidBodyInputs; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(RigidBodyInputsActions set) { return set.Get(); }
+        public void SetCallbacks(IRigidBodyInputsActions instance)
+        {
+            if (m_Wrapper.m_RigidBodyInputsActionsCallbackInterface != null)
+            {
+                @Up.started -= m_Wrapper.m_RigidBodyInputsActionsCallbackInterface.OnUp;
+                @Up.performed -= m_Wrapper.m_RigidBodyInputsActionsCallbackInterface.OnUp;
+                @Up.canceled -= m_Wrapper.m_RigidBodyInputsActionsCallbackInterface.OnUp;
+                @Scatter.started -= m_Wrapper.m_RigidBodyInputsActionsCallbackInterface.OnScatter;
+                @Scatter.performed -= m_Wrapper.m_RigidBodyInputsActionsCallbackInterface.OnScatter;
+                @Scatter.canceled -= m_Wrapper.m_RigidBodyInputsActionsCallbackInterface.OnScatter;
+            }
+            m_Wrapper.m_RigidBodyInputsActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Up.started += instance.OnUp;
+                @Up.performed += instance.OnUp;
+                @Up.canceled += instance.OnUp;
+                @Scatter.started += instance.OnScatter;
+                @Scatter.performed += instance.OnScatter;
+                @Scatter.canceled += instance.OnScatter;
+            }
+        }
+    }
+    public RigidBodyInputsActions @RigidBodyInputs => new RigidBodyInputsActions(this);
     public interface IPlayerInputsActions
     {
         void OnMove(InputAction.CallbackContext context);
+    }
+    public interface IRigidBodyInputsActions
+    {
+        void OnUp(InputAction.CallbackContext context);
+        void OnScatter(InputAction.CallbackContext context);
     }
 }
