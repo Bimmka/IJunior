@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using Tower;
 using UnityEngine;
@@ -9,7 +6,7 @@ namespace UI
 {
     public class CountDisplayer : MonoBehaviour
     {
-        [SerializeField] private TMP_Text countText;
+        [SerializeField] private TMP_Text _countText;
 
         private void Awake()
         {
@@ -25,12 +22,12 @@ namespace UI
 
         private void DisplayCount(int count)
         {
-            countText.text = count.ToString();
+            _countText.text = count.ToString();
         }
 
         private void DisplayWinText()
         {
-            countText.text = "You win!";
+            _countText.text = "You win!";
         }
     }
 }
