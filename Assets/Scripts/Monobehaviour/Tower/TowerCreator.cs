@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace Tower
@@ -8,6 +7,7 @@ namespace Tower
     {
         [SerializeField] private Vector2Int _towerSizeRange;
         [SerializeField] private Pipe _pipePrefab;
+        [SerializeField] private Color[] _colors;
 
         public List<Pipe> CreateTower()
         {
@@ -18,7 +18,7 @@ namespace Tower
             for (int i = 0; i < towerSize; i++)
             {
                 pipes.Add(CreatePipe(currentPoint));
-                currentPoint = pipes.Last().transform;
+                currentPoint = pipes[pipes.Count-1].transform;
             }
 
             return pipes;
@@ -26,7 +26,9 @@ namespace Tower
 
         private Pipe CreatePipe(Transform currentPoint)
         {
-            return Instantiate(_pipePrefab, GetSpawnPosition(currentPoint), Quaternion.identity, transform);
+            Pipe createdPipe = Instantiate(_pipePrefab, GetSpawnPosition(currentPoint), Quaternion.identity, transform);
+            createdPipe.SetColor(_colors[Random.Range(0,_colors.Length)]);
+            return createdPipe;
         }
 
         private Vector3 GetSpawnPosition(Transform currentPoint)

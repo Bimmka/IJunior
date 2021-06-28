@@ -27,6 +27,7 @@ namespace Tank
             if (_timeFromLastAttack < 0 && Input.GetMouseButton(0))
             {
                 Shoot();
+                _animator.StartAnimation(_attackDelay);
                 _timeFromLastAttack = _attackDelay;
             }
         }

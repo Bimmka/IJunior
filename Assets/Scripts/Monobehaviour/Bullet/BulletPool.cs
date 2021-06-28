@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Bullets
 {
     public class BulletPool : MonoBehaviour
     {
-        [SerializeField] private Bullet _bulletPrefab;
+        [SerializeField] private Bullet[] _bulletPrefabs;
         [SerializeField] private int _startCount;
 
         private Queue<Bullet> _bullets = new Queue<Bullet>();
@@ -19,7 +20,7 @@ namespace Bullets
 
         private void CreateBullets(int count)
         {
-            for (int i = 0; i < _startCount; i++)
+            for (int i = 0; i < count; i++)
             {
                 _bullets.Enqueue(CreateBullet());
             }
@@ -27,7 +28,7 @@ namespace Bullets
 
         private Bullet CreateBullet()
         {
-            Bullet spawnedBullet = Instantiate(_bulletPrefab, transform);
+            Bullet spawnedBullet = Instantiate(_bulletPrefabs[Random.Range(0,_bulletPrefabs.Length)], transform);
             spawnedBullet.gameObject.SetActive(false);
             spawnedBullet.OnReturned += AddBullet;
             return spawnedBullet;

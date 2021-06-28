@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Obstacles;
 using Tower;
 using UnityEngine;
 
@@ -26,8 +27,19 @@ namespace Bullets
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.GetComponent<Pipe>() != null)
-                StartCoroutine(ReturnToPool());
+            if (other.TryGetComponent(out Pipe pipe))
+            {
+                ReturnToPool();
+                pipe.Break();
+            }
+            else if (other.GetComponent<Obstacle>() != null)
+            {
+                Bounce();
+                AddExplosionForce();
+                StartCoroutine(WaitReturnToPool());
+            }
+               
+                
         }
 
         private void AddExplosionForce()
@@ -36,16 +48,27 @@ namespace Bullets
             _rigidbody.AddExplosionForce(_explosionForce, transform.position + new Vector3(0,-1,1), _explosionRadius);
         }
 
-        private IEnumerator ReturnToPool()
+        private void Bounce()
         {
-            AddExplosionForce();
-            yield return new WaitForSeconds(_returnTime);
+            _moveDirection = Vector3.back + Vector3.up;
+        }
+
+        private void ReturnToPool()
+        {
             _rigidbody.isKinematic = true;
             OnReturned?.Invoke(this);
+            StopAllCoroutines();
+        }
+
+        private IEnumerator WaitReturnToPool()
+        {
+            yield return new WaitForSeconds(_returnTime);
+            ReturnToPool();
         }
 
         private IEnumerator MoveOnDirection()
         {
+            _moveDirection = Vector3.forward;
             while (true)
             {
                transform.Translate(_moveDirection * _speed * Time.deltaTime);
